@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#173b32" />
+  <meta name="description" content="The wedding celebration of Fahim and Joyee." />
+  <title>Fahim & Joyee | A Celebration of Love</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #173b32;
+      --green2: #244b40;
+      --cream: #f7f2e8;
+      --paper: #fffdf7;
+      --gold: #bd9856;
+      --ink: #25332c;
+      --muted: #77796e;
+      --rose: #8d4c4b;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--cream); font-family: "DM Sans", sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    .topline { height: 5px; background: linear-gradient(90deg, var(--gold), #e4cf9d, var(--gold)); }
+    nav {
+      position: absolute; z-index: 5; top: 5px; left: 0; width: 100%;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 25px clamp(22px, 7vw, 100px); color: #fff;
+    }
+    .brand { font-family: "Playfair Display", serif; letter-spacing: .08em; font-size: 17px; }
+    .navlinks { display: flex; gap: 28px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; }
+    .navlinks a { opacity: .86; transition: opacity .2s; }
+    .navlinks a:hover { opacity: 1; color: #e8d4a7; }
+    .hero {
+      min-height: 740px; height: 100svh; max-height: 950px; position: relative; overflow: hidden;
+      display: grid; place-items: center; text-align: center; color: #fff;
+      background:
+        linear-gradient(180deg, rgba(13,35,29,.62), rgba(13,35,29,.56)),
+        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2200&q=85") center 48%/cover;
+    }
+    .hero:before, .hero:after {
+      content: ""; position: absolute; width: 290px; height: 290px; border: 1px solid rgba(222,193,135,.52);
+      border-radius: 50%; pointer-events: none;
+    }
+    .hero:before { top: -190px; left: -130px; box-shadow: 0 0 0 18px rgba(222,193,135,.05), 0 0 0 38px rgba(222,193,135,.04); }
+    .hero:after { bottom: -210px; right: -125px; box-shadow: 0 0 0 18px rgba(222,193,135,.05), 0 0 0 38px rgba(222,193,135,.04); }
+    .hero-inner { position: relative; z-index: 1; padding: 90px 20px 50px; }
+    .eyebrow { color: #e8d4a7; text-transform: uppercase; letter-spacing: .32em; font-size: 10px; font-weight: 600; }
+    .bismillah { font-family: "Playfair Display", serif; font-size: 22px; color: #e8d4a7; margin: 0 0 28px; }
+    h1 { font-family: "Playfair Display", serif; font-size: clamp(58px, 10vw, 118px); line-height: .98; font-weight: 500; margin: 24px 0 18px; letter-spacing: -.045em; }
+    h1 span { display: block; font-style: italic; font-size: .55em; color: #e8d4a7; margin: 12px 0; }
+    .hero-sub { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; margin-top: 28px; }
+    .date-pill { display: inline-block; border: 1px solid rgba(232,212,167,.75); padding: 12px 23px; margin-top: 35px; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; }
+    .scroll { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); font-size: 9px; letter-spacing: .25em; text-transform: uppercase; color: #e8d4a7; }
+    .section { padding: 105px 22px; }
+    .wrap { width: min(1050px, 100%); margin: auto; }
+    .center { text-align: center; }
+    .kicker { color: var(--rose); text-transform: uppercase; font-size: 10px; letter-spacing: .28em; font-weight: 600; }
+    h2 { font: 500 clamp(36px, 5vw, 58px)/1.12 "Playfair Display", serif; color: var(--green); margin: 15px 0 20px; }
+    .intro { max-width: 570px; margin: 0 auto; color: var(--muted); font: 16px/1.9 "Playfair Display", serif; }
+    .ornament { display: flex; align-items: center; gap: 13px; justify-content: center; margin: 25px auto; color: var(--gold); }
+    .ornament:before, .ornament:after { content: ""; width: 48px; height: 1px; background: var(--gold); }
+    .names { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 30px; max-width: 760px; margin: 55px auto 0; }
+    .name-card { padding: 25px 10px; }
+    .name-card strong { display: block; color: var(--green); font: 500 clamp(30px, 4vw, 45px) "Playfair Display", serif; }
+    .name-card small { display: block; margin-top: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .22em; font-size: 9px; }
+    .amp { color: var(--gold); font: italic 38px "Playfair Display", serif; }
+    .details { background: var(--green); color: var(--cream); position: relative; overflow: hidden; }
+    .details:before { content: "✧"; position: absolute; font-size: 300px; line-height: 1; color: rgba(231,211,169,.045); top: -85px; right: 2%; }
+    .details h2 { color: var(--cream); }
+    .details .kicker { color: #dfc48e; }
+    .event-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(221,197,151,.28); margin-top: 55px; border: 1px solid rgba(221,197,151,.28); }
+    .event { padding: 38px 24px; background: var(--green); text-align: center; }
+    .event .symbol { font-size: 25px; color: #dfc48e; margin-bottom: 18px; }
+    .event h3 { font: 500 27px "Playfair Display", serif; margin: 0 0 14px; }
+    .event p { color: #d2d7cf; font-size: 12px; line-height: 1.9; margin: 5px 0; }
+    .event .event-date { color: #dfc48e; text-transform: uppercase; letter-spacing: .18em; font-size: 9px; margin-bottom: 15px; }
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; margin-top: 45px; }
+    .story-photo { min-height: 480px; background: url("https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=1000&q=85") center/cover; position: relative; }
+    .story-photo:after { content: ""; position: absolute; inset: 15px; border: 1px solid rgba(255,255,255,.7); }
+    .story-copy p { color: var(--muted); font: 16px/2 "Playfair Display", serif; }
+    .story-copy .signature { font: italic 26px "Playfair Display", serif; color: var(--rose); margin-top: 30px; }
+    .gallery { background: #eee7da; }
+    .gallery-grid { display: grid; grid-template-columns: 1.2fr .8fr .8fr; gap: 14px; margin-top: 45px; }
+    .gallery-grid img { width: 100%; height: 330px; object-fit: cover; display: block; }
+    .gallery-grid img:first-child { height: 410px; }
+    .rsvp { background: var(--paper); }
+    .rsvp-box { max-width: 650px; margin: 45px auto 0; border: 1px solid #d9c9a7; padding: clamp(25px, 6vw, 55px); text-align: center; }
+    form { display: grid; gap: 15px; margin-top: 30px; text-align: left; }
+    input, select, textarea { width: 100%; border: 0; border-bottom: 1px solid #d8d0c2; padding: 14px 4px; background: transparent; font: 13px "DM Sans", sans-serif; color: var(--ink); outline: none; }
+    textarea { min-height: 75px; resize: vertical; }
+    button { margin-top: 10px; border: 0; background: var(--green); color: white; padding: 16px 22px; letter-spacing: .2em; font: 600 10px "DM Sans", sans-serif; text-transform: uppercase; cursor: pointer; transition: background .2s; }
+    button:hover { background: var(--rose); }
+    #form-note { color: var(--green); font-size: 12px; min-height: 18px; text-align: center; }
+    footer { background: #102d26; color: var(--cream); text-align: center; padding: 60px 20px; }
+    footer .footer-names { font: 500 42px "Playfair Display", serif; }
+    footer p { color: #c3c9c0; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; margin-top: 17px; }
+    .gold { color: #dfc48e; }
+    @media (max-width: 700px) {
+      nav { padding: 20px; }
+      .navlinks { gap: 13px; font-size: 8px; letter-spacing: .1em; }
+      .brand { font-size: 14px; }
+      .hero { min-height: 680px; }
+      .section { padding: 78px 20px; }
+      .names { gap: 8px; margin-top: 35px; }
+      .event-grid { grid-template-columns: 1fr; }
+      .event { padding: 30px 20px; }
+      .story-grid { grid-template-columns: 1fr; gap: 35px; }
+      .story-photo { min-height: 390px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-grid img, .gallery-grid img:first-child { height: 230px; }
+      .gallery-grid img:first-child { grid-column: span 2; height: 300px; }
+    }
+    @media (max-width: 390px) { .navlinks { gap: 8px; font-size: 7px; } }
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <nav>
+    <a class="brand" href="#">F <span class="gold">✦</span> J</a>
+    <div class="navlinks">
+      <a href="#story">Our story</a>
+      <a href="#events">Celebrations</a>
+      <a href="#rsvp">RSVP</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+      <p class="eyebrow">Together with our families</p>
+      <h1>Fahim <span>&</span> Joyee</h1>
+      <p class="hero-sub">A beautiful beginning · Insha'Allah</p>
+      <div class="date-pill">The wedding celebration · Date to be announced</div>
+    </div>
+    <a class="scroll" href="#welcome">Scroll to explore ↓</a>
+  </header>
+
+  <main>
+    <section class="section center" id="welcome">
+      <div class="wrap">
+        <p class="kicker">A little celebration of forever</p>
+        <h2>Two hearts. One beautiful journey.</h2>
+        <div class="ornament">✧</div>
+        <p class="intro">With the blessings of Allah and the love of our families, we invite you to celebrate the beginning of our forever.</p>
+        <div class="names">
+          <div class="name-card"><strong>Fahim</strong><small>The Groom</small></div>
+          <div class="amp">&</div>
+          <div class="name-card"><strong>Joyee</strong><small>The Bride</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section details center" id="events">
+      <div class="wrap">
+        <p class="kicker">Save the celebrations</p>
+        <h2>Join us for the festivities</h2>
+        <p class="intro" style="color:#d2d7cf">A little tradition, a lot of love, and memories we’ll cherish forever.</p>
+        <div class="event-grid">
+          <article class="event">
+            <div class="symbol">☾</div><p class="event-date">Event one</p>
+            <h3>Mehndi</h3><p>Date: To be announced</p><p>Time: To be announced</p><p>Venue: To be announced</p>
+          </article>
+          <article class="event">
+            <div class="symbol">✦</div><p class="event-date">The wedding</p>
+            <h3>Nikah</h3><p>Date: To be announced</p><p>Time: To be announced</p><p>Venue: To be announced</p>
+          </article>
+          <article class="event">
+            <div class="symbol">❋</div><p class="event-date">Event three</p>
+            <h3>Walima</h3><p>Date: To be announced</p><p>Time: To be announced</p><p>Venue: To be announced</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="story">
+      <div class="wrap story-grid">
+        <div class="story-photo" role="img" aria-label="Elegant wedding floral detail"></div>
+        <div class="story-copy">
+          <p class="kicker">Written in the stars</p>
+          <h2>Our story<br><em>starts here.</em></h2>
+          <p>Some stories are written quietly, with kindness, patience, and a thousand little moments. Ours is beginning a new chapter, surrounded by the people who mean the most to us.</p>
+          <p>We cannot wait to celebrate this special day with you.</p>
+          <div class="signature">With love, Fahim & Joyee</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery center">
+      <div class="wrap">
+        <p class="kicker">A mood of celebration</p>
+        <h2>Little details, lovely memories</h2>
+        <p class="intro">Inspired by the colour, craft, and timeless romance of a Pakistani wedding.</p>
+        <div class="gallery-grid">
+          <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1000&q=85" alt="Traditional wedding floral decoration">
+          <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=85" alt="Wedding celebration details">
+          <img src="https://images.unsplash.com/photo-1594465919760-441fe5908ab0?auto=format&fit=crop&w=800&q=85" alt="Wedding flowers and decor">
+        </div>
+      </div>
+    </section>
+
+    <section class="section rsvp center" id="rsvp">
+      <div class="wrap">
+        <p class="kicker">We saved you a place</p>
+        <h2>Will you join us?</h2>
+        <p class="intro">Your presence will make our celebration even more special. Kindly let us know if you can make it.</p>
+        <div class="rsvp-box">
+          <p class="kicker">Kindly respond</p>
+          <form id="rsvp-form">
+            <input name="guest" placeholder="Your name" aria-label="Your name" required>
+            <input name="email" type="email" placeholder="Email address (optional)" aria-label="Email address">
+            <select name="attendance" aria-label="Will you attend?" required>
+              <option value="" disabled selected>Will you be attending?</option>
+              <option>Joyfully accepts</option>
+              <option Regretfully declines</option>
+            </select>
+            <select name="guests" aria-label="Number of guests">
+              <option value="1">1 guest</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option>
+            </select>
+            <textarea name="message" placeholder="Leave a note for the couple (optional)" aria-label="Message"></textarea>
+            <button type="submit">Send your response</button>
+            <div id="form-note" aria-live="polite"></div>
+          </form>
+          <p style="font-size:10px;color:#89877e;line-height:1.7;margin-top:18px">Demo form: connect an RSVP service or backend before publishing to collect responses.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-names">Fahim <span class="gold">&</span> Joyee</div>
+    <p>Made with love · بِإِذْنِ اللَّهِ</p>
+  </footer>
+
+  <script>
+    document.getElementById("rsvp-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      document.getElementById("form-note").textContent =
+        "Thank you! This is a design preview. Connect an RSVP service to receive submissions.";
+    });
+  </script>
+</body>
+</html>
